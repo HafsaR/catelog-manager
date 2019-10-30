@@ -1,0 +1,30 @@
+<h3> Product List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+           
+            <th> Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Retail Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+          
+        
+            <td>{{this.name}}</td>
+            <td>{{this.brand}}</td>
+            <td>{{this.category}}</td>
+            <td>{{this.retailPrice}}</td>
+            <td>
+                <button class="btn btn-danger delete" onclick="delete({{this.barcodeNumber}})">
+                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                </button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
