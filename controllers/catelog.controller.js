@@ -49,8 +49,7 @@ router.post('/read',(req,res) => {
             var image = f.images;
             var name = f.product_name;
             var path = f.stores.product_url;
-            var rentalPrice = f.stores.store_price;
-            var retailPrice = f.stores.store_price;
+            var retailPrice = f.stores[0] ? f.stores[0].store_price : null
             var sku = f.sku;
             var updated = f.updated;
 
@@ -62,7 +61,6 @@ router.post('/read',(req,res) => {
             catelog.image = image;
             catelog.name = name;
             catelog.path = path;
-            catelog.rentalPrice = rentalPrice;
             catelog.retailPrice = retailPrice;
             catelog.sku=sku;
             catelog.updated=updated;
@@ -129,6 +127,32 @@ router.get('/list',(req,res) => {
     });
 
     
+});
+
+router.post('/delete/:id',(req,res) => {
+
+    var curid = req.params.id;
+  //  curid = curid.replace(/\s/g,'');
+
+    Catelog.findByIdAndRemove(curid, (err,docs) => {
+        if(!err) {
+        
+            Catelog.find((err,docs) => {
+                if (!err) {
+                    res.render('catelog/list',{
+        
+                        viewTitle: 'Procuct List',
+                        list:docs
+                        
+                    });
+                    
+                }else {console.log('error: '+err)}
+            })
+        }
+        else{
+        console.log('error: '+err)
+        }
+    })
 });
 
 function onlyUnique(value, index, self) { 
