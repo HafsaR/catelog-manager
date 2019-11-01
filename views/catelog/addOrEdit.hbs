@@ -1,4 +1,4 @@
-<h3> Category Item</h3>
+<h3> Catelog Item</h3>
 <table id="products" class="table table-striped">
     <thead>
         <tr>
@@ -18,8 +18,7 @@
             <td>{{this.category}}</td>
             <td>{{this.retailPrice}}</td>
             <td>
-                {{!-- <a href="/category/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a> --}}
-                <a href="/category/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                <a href="/catelog/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
             </td>
         </tr>
         {{/each}}

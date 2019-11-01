@@ -1,4 +1,4 @@
-const readAllfiles = './input/';
+const readAllfiles = './input/compressor/';
 const fs =require('fs');
 const path = require('path');
 

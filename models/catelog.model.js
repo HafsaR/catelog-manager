@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var categorySchema = new mongoose.Schema({
+var catelogSchema = new mongoose.Schema({
     barcodeNumber:{
         type: String
     },
@@ -16,9 +16,7 @@ var categorySchema = new mongoose.Schema({
     description: {
         type: String
     },
-    id: {
-        type: String
-    },
+   
     image: {
        //// store it directly
     },
@@ -40,4 +38,4 @@ var categorySchema = new mongoose.Schema({
     }
 });
 
-mongoose.model('Category',categorySchema);
+mongoose.model('Catelog',catelogSchema);

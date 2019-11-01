@@ -1,13 +1,13 @@
 require('./models/db');
 const express = require('express');
 const app = express();
-const categoryController = require('./controllers/category.controller');
+const catelogController = require('./controllers/catelog.controller');
 const bodyParser = require('body-parser');
 const exhbs = require('express-handlebars');
 const path = require('path');
 
 
-app.use('/category', categoryController);
+app.use('/catelog', catelogController);
 
 app.use(bodyParser.urlencoded({
     extended: true
