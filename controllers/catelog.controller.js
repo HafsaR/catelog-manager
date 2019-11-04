@@ -34,7 +34,8 @@ router.post('/read',(req,res) => {
   
     if (req.body) {
 
-        console.log('body in array:')
+        console.log('body in array:');
+        
     }else{
    fs.readdir(inputDir,(err,files) => {
 
