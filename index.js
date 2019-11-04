@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const exhbs = require('express-handlebars');
 const path = require('path');
 
+const port = process.env.PORT || 3000
 
 app.use('/catelog', catelogController);
 
@@ -19,7 +20,7 @@ app.engine('hbs',exhbs({extname:'hbs',defaultLayout:'mainLayout',layoutsDir:__di
 app.set('view engine','hbs');
 
 
-app.listen(3000,err => {
-    if(!err){console.log('server running on port 3000');}
+app.listen(port,err => {
+    if(!err){console.log(`server running on port ${port}`);}
     else {console.log('error: '+err);}
 });
