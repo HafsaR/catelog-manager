@@ -32,6 +32,10 @@ router.get('/',(req,res) => {
 
 router.post('/read',(req,res) => {
   
+    if (req.body) {
+
+        console.log('body in array:')
+    }else{
    fs.readdir(inputDir,(err,files) => {
 
     var fileList = [];
@@ -95,7 +99,7 @@ router.post('/read',(req,res) => {
     }); 
    }) ;
 
-  
+}
 
 });
 
@@ -137,17 +141,17 @@ router.post('/delete/:id',(req,res) => {
     Catelog.findByIdAndRemove(curid, (err,docs) => {
         if(!err) {
         
-            Catelog.find((err,docs) => {
-                if (!err) {
+             Catelog.find((err,doc) => {
+                 if (!err) {
                     res.render('catelog/list',{
         
                         viewTitle: 'Procuct List',
-                        list:docs
+                        list:doc
                         
                     });
                     
-                }else {console.log('error: '+err)}
-            })
+                 }else {console.log('error: '+err)}
+             })
         }
         else{
         console.log('error: '+err)

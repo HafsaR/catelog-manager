@@ -23,48 +23,6 @@
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-{{!-- <script type="text/javascript">
-$(document).ready(function() {
-    $('#products').DataTable();
-     console.log('boom')
-    const delete = (id) => {
-        $.ajax(`/catelog/${id}`, {method: 'DELETE'}, () => {
-            window.reload()
-        })
-    }
-} );
-</script> --}}
-
-<script type="text/javascript">
-
-$(document).ready(function(){
-    $('#delete').click( e => {
-        alert('delete');
-        $target = $(e.target);
-      
-        const delID = $target.attr('data-name');
-         $.ajax({
-            'url' : `/catelog/delete/${delID}`,
-            'type' : 'DELETE',
-       
-        error: function() {
-                       alert('Error');
-                    },
-                    success : function(data) {
-                       if (data == "success") {
-                            alert('record deleted!');
-                            window.location.reload(true);
-                       }
-                    }
-        });
-        
-    });
-
-});
-</script>
-
-
-
 </body>
 
 </html>
