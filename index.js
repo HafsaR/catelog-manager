@@ -8,7 +8,7 @@ const path = require('path');
 
 const port = process.env.PORT || 3000
 
-app.use('/catelog', catelogController);
+app.use('/', catelogController);
 
 app.use(bodyParser.urlencoded({
     extended: true
